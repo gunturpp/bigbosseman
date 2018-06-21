@@ -1,0 +1,23 @@
+page-login {
+    .space {
+        position: relative;
+        height: 200px;
+        padding-top:150px;
+    }
+    .background {
+        background-image: url('../assets/imgs/bg.jpg');
+    }
+    ion-list ion-item{
+        border-radius: 40px;
+    }
+    ion-list ion-input {
+        color: $primary;
+    }
+    .register {
+        text-align: right;
+        color: #fff;
+        padding-right: 30px;
+
+    }
+    
+}

@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Unggah Sepatu</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="background" padding>
+  <ion-item>
+    <ion-label stacked>Nama Sepatu</ion-label>
+    <ion-input type="text" [(ngModel)]="shoesName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Kategori</ion-label>
+    <ion-input type="text" [(ngModel)]="category"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Harga (Rp)</ion-label>
+    <ion-input min="1" type="number" [(ngModel)]="price"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Grade</ion-label>
+    <ion-input type="text" [(ngModel)]="grade"></ion-input>
+  </ion-item>
+
+  <div class="container">
+    <p>Size</p>
+    <div *ngFor="let size of allSize; let i = index">
+      <ion-row *ngIf="size">
+        <ion-col class="sizeNumber" col-2>{{size}}</ion-col>
+        <ion-col col-2>
+          <ion-checkbox [(ngModel)]="sizeStatus[i]" (ionChange)="checkboxFunction(sizeStatus[i],i)" item-right></ion-checkbox>
+        </ion-col>
+        <ion-col col-8>
+          <ion-input min="1" *ngIf="sizeStatus[i]" type="number" [(ngModel)]="stock[i]" placeholder="jumlah barang tersedia"></ion-input>
+        </ion-col>
+      </ion-row>
+    </div>
+    <!-- upload foto -->
+    <p>Upload Gambar</p>
+    <ion-row>
+      <ion-col col-4 class="uploadPicture" (click)="uploadPicture1()"></ion-col>
+      <ion-col col-4 class="uploadPicture" (click)="uploadPicture2()"></ion-col>
+      <ion-col col-4 class="uploadPicture" (click)="uploadPicture3()"></ion-col>
+    </ion-row>
+
+  </div>
+</ion-content>
+<ion-footer>
+  <button ion-button large full (click)="goUploadProduct()">Upload</button>
+</ion-footer>

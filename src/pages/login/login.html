@@ -1,0 +1,40 @@
+<ion-content class="background" padding>
+  <div class="space">
+
+    <!-- login -->
+    <ion-list  *ngIf="!registerStatus">
+      <ion-item>
+        <ion-input placeholder="Enter your email" type="text" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Enter your password" type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button *ngIf="!registerStatus" ion-button full round [disabled]="!password && !email" (click)="login()">Sign In</button>
+
+    <p *ngIf="!registerStatus" (click)="register()" class="register">Don't have account?
+      <b>Register now!</b>
+    </p>
+
+    <!-- register -->
+    <ion-list *ngIf="registerStatus">
+      <ion-item>
+        <ion-input placeholder="Enter your name" type="text" [(ngModel)]="newname"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-input placeholder="Enter your email" type="text" [(ngModel)]="newemail"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-input placeholder="Enter your password" type="password" [(ngModel)]="newpassword"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button *ngIf="registerStatus" ion-button full round [disabled]="!password && !email && !name" (click)="registerNow()">SignUp</button>
+    <p *ngIf="registerStatus" (click)="back()" class="register">Already have account?
+        <b>back!</b>
+      </p>
+  
+  </div>
+  </ion-content>

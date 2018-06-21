@@ -40,8 +40,8 @@ $colors: (
   light:      #f4f4f4,
   dark:       #222
 );
-
-
+$primary:    #488aff;
+$transparant: rgba(0,0,0,0.4);
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
@@ -53,7 +53,10 @@ $colors: (
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
+$text-input-placeholder-color: #fff;
+$text-input-background-color: $primary;
+$list-md-background-color: $transparant;
+$label-md-text-color: #fff;
 
 
 // App Windows Variables
